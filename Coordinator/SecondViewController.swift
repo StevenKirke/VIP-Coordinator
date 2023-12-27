@@ -141,7 +141,7 @@ private extension SecondViewController {
 }
 
 // Инициализируем 'IFirstDisplay'
-extension SecondViewController: IFirstDisplay {
+extension SecondViewController: ISecondDisplay {
 	func render(viewModel: ViewModel) {
 		print("viewModel \(viewModel)")
 	}

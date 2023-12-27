@@ -10,13 +10,12 @@ import Foundation
 typealias FirstVC = FirstViewController
 
 final class FirstConfigurator {
+
 	func configure(viewController: FirstVC, firstSceneClosure: FirstSceneClosure?) -> FirstVC {
 
 		let worker = FirstWorker()
 		let presenter = FirstPresenter(
-			firstSceneClosure: firstSceneClosure,
-			testClosure: {}
-		)
+			firstSceneClosure: firstSceneClosure)
 		let iterator = FirstIterator(presenter: presenter, worker: worker)
 
 		viewController.iteractor = iterator

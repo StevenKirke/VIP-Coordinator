@@ -22,21 +22,15 @@ final class FirstPresenter {
 
 	// MARK: - Public properties
 	var firstResultClosure: FirstSceneClosure?
-	var testClosure: () -> Void
 
 	// MARK: - Initializator
-	internal init(
-		firstSceneClosure: FirstSceneClosure?,
-		testClosure: @escaping () -> Void
-	) {
+	internal init(firstSceneClosure: FirstSceneClosure?) {
 		self.firstResultClosure = firstSceneClosure
-		self.testClosure = testClosure
 	}
 }
 
 extension FirstPresenter: IFirstPresenter {
 	func present(responce: Responce) {
 		firstResultClosure?(responce.responceResult)
-		testClosure()
 	}
 }

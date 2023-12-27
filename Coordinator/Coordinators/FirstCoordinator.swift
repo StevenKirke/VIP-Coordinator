@@ -19,8 +19,6 @@ final class FirstCoordinator: IFirstCoordinator {
 
 	var navigateController: UINavigationController
 
-	var modelForTransfer: FirstModel.ViewModel?
-
 	internal init(navigateController: UINavigationController) {
 		self.navigateController = navigateController
 	}
@@ -36,7 +34,6 @@ final class FirstCoordinator: IFirstCoordinator {
 			viewController: viewController,
 			firstSceneClosure: handlingResult
 		)
-		print("modelForTransfer \(modelForTransfer)")
 		navigateController.pushViewController(firstVC, animated: true)
 	}
 }
@@ -56,6 +53,7 @@ private extension FirstCoordinator {
 		case .failure(let error):
 			model = .error(error.errorDescription)
 		}
-		modelForTransfer = model
+		print("Data from Presenter \(model)")
+		// How transwer in FirsrViewController?
 	}
 }
